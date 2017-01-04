@@ -64,6 +64,11 @@
                 <hr>   
                 <div class="row">
                     <div class="title">調課</div>
+                    <select name="teacher" id="" class="teacher">
+                        @foreach($teachers as $teacher)
+                            <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                        @endforeach
+                    </select>
                     <div class="col-md3">
                         日期<input type="text">
                         星期
@@ -103,7 +108,6 @@
                     </div>
                     <div class="col-md3">
                         科目<input type="text" name="subject">
-                        調課人姓名<input type="text" name="name">
                     </div>
                 </div>
                 <div class="row">
