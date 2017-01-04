@@ -16,6 +16,12 @@
             <form action="" method="post">
                 <div class="row">
                     <div class="title">擔任課程</div>
+                    <select name="teacher" id="" class="teacher">
+                        @foreach($teachers as $teacher)
+                            <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                        @endforeach
+                    </select>
+                    
                     <div class="col-md3">
                         日期<input type="text">
                         星期

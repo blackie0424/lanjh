@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Teacher;
+
 
 class TransferSubjectController extends Controller
 {
@@ -16,7 +18,8 @@ class TransferSubjectController extends Controller
      */
     public function index()
     {
-        return view('transfer');
+        $teachers = Teacher::all();
+        return view('transfer')->with('teachers',$teachers);
     }
 
     /**
