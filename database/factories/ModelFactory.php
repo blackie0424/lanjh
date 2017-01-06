@@ -20,8 +20,23 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Teacher::class, function(Faker\Generator $faker){
+$factory->define(App\Teacher::class, function(Faker\Generator $faker) {
 	return [
 		'name' => $faker->name
+	];
+});
+
+$factory->define(App\DynamicSubject::class, function(Faker\Generator $faker) {
+	return [
+		'origin_date' => $faker->date($format = 'Y-m-d' , $min = 'now'),
+		'origin_period' => 1,
+		'origin_teacher_id' => 1,
+		'origin_subject_id' => 1,
+		'origin_class_id' => 1,
+		'transferred_date' => $faker->date($format = 'Y-m-d' , $min = 'now'),
+		'transferred_period' => 2,
+		'transferred_teacher_id' => 2,
+		'transferred_subject_id' => 2,
+		'transferred_class_id' => 2
 	];
 });
